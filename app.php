@@ -106,7 +106,7 @@ function db(): PDO
 function ensure_schema(PDO $pdo): void
 {
     $pdo->exec(
-        'CREATE TABLE IF NOT EXISTS activities (
+        'CREATE TABLE IF NOT EXISTS activday_activities (
             id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             activity_date DATE NOT NULL,
             start_time TIME NOT NULL,
@@ -297,7 +297,7 @@ function valid_time(string $time): bool
 function save_activity(array $data): void
 {
     $statement = db()->prepare(
-        'INSERT INTO activities (activity_date, start_time, end_time, description)
+        'INSERT INTO activday_activities (activity_date, start_time, end_time, description)
          VALUES (:activity_date, :start_time, :end_time, :description)'
     );
 
@@ -326,7 +326,7 @@ function parse_filter_date(?string $value): ?string
 function fetch_activities(?string $from, ?string $to): array
 {
     $sql = 'SELECT id, activity_date, TIME_FORMAT(start_time, "%H:%i") AS start_time, TIME_FORMAT(end_time, "%H:%i") AS end_time, description, created_at
-            FROM activities';
+            FROM activday_activities';
     $params = [];
     $clauses = [];
 
