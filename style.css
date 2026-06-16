@@ -1,0 +1,226 @@
+:root {
+    color-scheme: light;
+    --bg: #f3f4f6;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --border: #d1d5db;
+    --error-bg: #fef2f2;
+    --error-text: #991b1b;
+    --success-bg: #ecfdf5;
+    --success-text: #166534;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.layout {
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.card {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--card);
+    border-radius: 18px;
+    padding: 1.25rem;
+    box-shadow: 0 16px 48px rgba(17, 24, 39, 0.08);
+}
+
+.card-header,
+.header-actions,
+.grid {
+    display: flex;
+    gap: 1rem;
+}
+
+.card-header,
+.header-actions {
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.eyebrow {
+    margin: 0 0 0.35rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.lead,
+.hint,
+.empty-state {
+    color: var(--muted);
+}
+
+.stack {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.field {
+    display: grid;
+    gap: 0.5rem;
+    font-weight: 700;
+}
+
+.field span {
+    font-size: 0.95rem;
+}
+
+input,
+textarea,
+button,
+.button {
+    font: inherit;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem 0.95rem;
+    background: #fff;
+}
+
+textarea {
+    min-height: 10rem;
+    resize: vertical;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.85rem 1.15rem;
+    text-decoration: none;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.button:hover {
+    background: var(--primary-dark);
+}
+
+.button.secondary {
+    background: #e5e7eb;
+    color: var(--text);
+}
+
+.button.ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.notice {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.notice-error {
+    background: var(--error-bg);
+    color: var(--error-text);
+}
+
+.notice-success {
+    background: var(--success-bg);
+    color: var(--success-text);
+}
+
+.two-columns {
+    flex-wrap: wrap;
+}
+
+.two-columns > * {
+    flex: 1 1 220px;
+}
+
+.export-links {
+    margin: 1rem 0;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.85rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    text-align: left;
+}
+
+th {
+    font-size: 0.9rem;
+}
+
+code {
+    background: #f3f4f6;
+    padding: 0.15rem 0.35rem;
+    border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+    .card {
+        padding: 1rem;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    .layout {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .button,
+    .button.secondary,
+    .button.ghost {
+        width: 100%;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .header-actions form {
+        width: 100%;
+    }
+}
