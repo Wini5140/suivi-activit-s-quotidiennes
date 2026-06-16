@@ -1,0 +1,11 @@
+<?php
+
+return [
+    'db_host' => '127.0.0.1',
+    'db_port' => '3306',
+    'db_name' => 'suivi_activites',
+    'db_user' => 'ovh_user',
+    'db_pass' => 'mot_de_passe_mysql',
+    'password_hash' => '$2y$10$remplacezCetteValeurParLeHashGenere',
+    'force_https' => true,
+];
